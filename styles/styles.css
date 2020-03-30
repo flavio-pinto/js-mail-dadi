@@ -11,3 +11,15 @@
 .mostra {
     opacity: 1;
 }
+
+.bkg-green {
+    background: lightgreen;
+}
+
+.bkg-red {
+    background: red;
+}
+
+.bkg-yellow {
+    background: yellow;
+}

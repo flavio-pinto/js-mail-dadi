@@ -18,7 +18,20 @@
 
     <!-- Giochino dadi -->
     <div id="gioco-dadi" class="nascosto">
-        <button class="lanciaDadi">Gioca!</button>
+        <button id="lanciaDadi">Lancia i dadi!</button>
+
+        <table>
+            <thead>
+                <td><strong>Tuo Punteggio</strong></td>
+                <td><strong>Punteggio CPU</strong></td>
+            </thead>
+            <tbody>
+                <td id="tuoPunteggio" class=""></td>
+                <td id="punteggioCpu" class=""></td>
+            </tbody>
+        </table>
+
+        <h1 id="risultato"></h1>
     </div>
 
     <script src="js/main.js"></script>

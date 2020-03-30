@@ -25,7 +25,7 @@ pulsanteEntra.addEventListener('click',
 
         // risposta
         if (emailTrovata === true) {
-            alert('Benvenuto nel nostro umile sito!');
+            alert('Benvenuto nel nostro sito!');
             // mostra gioco dadi
             giocoDadi.className = 'mostra';
         } else {
@@ -35,6 +35,38 @@ pulsanteEntra.addEventListener('click',
 );
 
 /**
- * Gioco dei dadi uomo vs cpu
+ * Gioco dei dadi player vs cpu
  */
 
+// stabilisco variabili
+var tuaGiocata;
+var giocataCpu;
+
+lanciaDadi.addEventListener('click',
+    function() {
+        // Lancia dadi e ottieni numero da 2 a 12...
+        tuaGiocata = Math.floor(Math.random() * (12 - 1)) + 2;
+
+        // anche la CPU
+        giocataCpu = Math.floor(Math.random() * (12 - 1)) + 2;
+
+        // stampa punteggio nella tabella
+        document.getElementById('tuoPunteggio').innerHTML = tuaGiocata;
+        document.getElementById('punteggioCpu').innerHTML = giocataCpu;
+
+        // risultato
+        if (tuaGiocata > giocataCpu) {
+            document.getElementById('risultato').innerHTML = 'Complimenti, hai vinto!';
+            tuoPunteggio.className = 'bkg-green';
+            punteggioCpu.className = 'bkg-red';
+        } else if (tuaGiocata < giocataCpu) {
+            document.getElementById('risultato').innerHTML = 'Che disdetta, hai perso!';
+            tuoPunteggio.className = 'bkg-red';
+            punteggioCpu.className = 'bkg-green';
+        } else {
+            document.getElementById('risultato').innerHTML = 'Pareggio!';
+            tuoPunteggio.className = 'bkg-yellow';
+            punteggioCpu.className = 'bkg-yellow';
+        }
+    }
+);
